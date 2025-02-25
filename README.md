@@ -94,7 +94,7 @@ A aplicação usa **MongoDB** com os seguintes campos para os itens:
 
 - **Título**: String (obrigatório)
 - **Descrição**: String (obrigatório)
-- **URL da Foto**: String (opcional)
+- **URL da Foto**: String (obrigatório)
 
 ## Arquitetura do Projeto
 
