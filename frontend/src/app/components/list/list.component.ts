@@ -9,7 +9,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmComponent } from '../confirm-dialog/confirm-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -31,7 +31,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
         MatPaginatorModule,
         MatSortModule,
         MatInputModule,
-        FormsModule 
+        FormsModule,
+        MatPaginatorModule
     ]
 })
 export class ListComponent implements OnInit {
@@ -45,7 +46,7 @@ export class ListComponent implements OnInit {
     constructor(
         private apiService: ApiService,
         public dialog: MatDialog,
-        private snackBar: MatSnackBar
+        private snackBar: MatSnackBar,
     ) { }
 
     ngOnInit(): void {
