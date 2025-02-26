@@ -62,7 +62,7 @@ button {
     text-transform: uppercase;
     font-weight: 500;
     padding: 8px 16px;
-        border-radius: 4px;
+    border-radius: 4px;
         transition: 0.5s ease;
 }
 
@@ -70,13 +70,14 @@ button[mat-raised-button][color="primary"] {
     background-color: #4984f1;
     color: #FFF;
 }
+
 button[mat-raised-button][color="primary"]:hover {
     background-color: #71a3ff;
 }
 
 button[mat-raised-button][color="warn"] {
     background-color: #f44336;
-        color: white;
+    color: white;
     }
     
     button[mat-raised-button][color="warn"]:hover {
@@ -122,4 +123,8 @@ button[mat-raised-button]:disabled {
     button[mat-raised-button] {
         width: 100%;
     }
+                .image-preview {
+                    width: 200px;
+                    height: 150px;
+                }
 }
