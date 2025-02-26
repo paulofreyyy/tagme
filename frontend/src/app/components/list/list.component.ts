@@ -93,7 +93,7 @@ export class ListComponent implements OnInit {
                     })
                 });
             }
-            this.snackBar.open('Item removido com sucesso!', 'Fechar');
+            this.snackBar.open('Item removido com sucesso!', 'Fechar', { duration: 3000 });
         });
     }
 

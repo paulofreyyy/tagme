@@ -68,12 +68,12 @@ export class EditComponent implements OnInit {
             this.isLoading = true;
             this.apiService.updateItem(this.itemId, this.editForm.value).subscribe({
                 next: () => {
-                    this.snackBar.open('Item atualizado com sucesso!', 'Fechar');
+                    this.snackBar.open('Item atualizado com sucesso!', 'Fechar', { duration: 3000 });
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
                     console.error("Erro ao atualizar item", err);
-                    this.snackBar.open('Erro ao atualizar item!', 'Fechar');
+                    this.snackBar.open('Erro ao atualizar item!', 'Fechar', { duration: 3000 });
                 },
                 complete: () => this.isLoading = false
             });

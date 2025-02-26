@@ -45,12 +45,12 @@ export class CreateComponent {
             this.apiService.createItem(this.createForm.value).subscribe({
                 next: () => {
                     console.log('Chamando snackBar e redirecionamento');
-                    this.snackBar.open('Item criado com sucesso!', 'Fechar')
+                    this.snackBar.open('Item criado com sucesso!', 'Fechar', { duration: 3000 })
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
                     console.error("Erro ao criar item", err);
-                    this.snackBar.open('Erro ao criar item!', 'Fechar')
+                    this.snackBar.open('Erro ao criar item!', 'Fechar', { duration: 3000 })
                 },
                 complete: () => this.isLoading = false
             })
