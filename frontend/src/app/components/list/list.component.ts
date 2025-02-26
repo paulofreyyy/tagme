@@ -13,6 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-list',
@@ -41,7 +42,11 @@ export class ListComponent implements OnInit {
     pageSize = 8;
     pageIndex = 0;
 
-    constructor(private apiService: ApiService, public dialog: MatDialog) { }
+    constructor(
+        private apiService: ApiService,
+        public dialog: MatDialog,
+        private snackBar: MatSnackBar
+    ) { }
 
     ngOnInit(): void {
         this.apiService.getItems().subscribe((data) => {
@@ -82,10 +87,13 @@ export class ListComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
                 this.apiService.deleteItem(id).subscribe(() => {
-                    this.items = this.items.filter((item) => item.id !== id);
-                    this.applyFilter();
+                    this.apiService.getItems().subscribe((data) => {
+                        this.items = data
+                        this.applyFilter();
+                    })
                 });
             }
+            this.snackBar.open('Item removido com sucesso!', 'Fechar');
         });
     }
 

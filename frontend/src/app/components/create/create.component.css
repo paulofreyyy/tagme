@@ -31,11 +31,11 @@ mat-label {
 }
 
 ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 ::ng-deep .mdc-text-field--filled.mdc-text-field--focused {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 ::ng-deep .mdc-text-field--filled:hover {
