@@ -1,0 +1,116 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* MAT-FORM-FIELD */
+::ng-deep .mat-form-field-wrapper {
+    margin-bottom: 20px;
+}
+
+::ng-deep .mat-form-field-flex {
+    background-color: #f9f9f9;
+}
+
+::ng-deep .mat-form-field-outline {
+    color: #dddddd;
+}
+
+::ng-deep .mat-form-field-outline-thick {
+    color: #4a90e2;
+}
+
+::ng-deep .mat-form-field-label {
+    color: #666666;
+}
+
+/* INPUT */
+input.mat-input-element,
+textarea.mat-input-element {
+    color: #333333;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button[mat-raised-button] {
+    min-width: 120px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+button[mat-raised-button][color="primary"] {
+    background-color: #4a90e2;
+    color: #FFF;
+}
+
+button[mat-raised-button][color="warn"] {
+    background-color: #e57373;
+    color: #FFF;
+}
+
+button[mat-raised-button]:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+.image-preview-container {
+    text-align: center;
+}
+
+.image-preview-container h4 {
+    font-weight: 500;
+}
+
+.image-preview {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px dashed #a1a1a1;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button[mat-raised-button] {
+        width: 100%;
+    }
+}

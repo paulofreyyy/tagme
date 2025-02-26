@@ -14,8 +14,14 @@
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Imagem (URL)</mat-label>
-            <input matInput formControlName="image" required>
+            <input matInput formControlName="image" required (input)="onImageUrlChange()">
         </mat-form-field>
+
+        <!-- Pré-visualização da Imagem -->
+        <div *ngIf="imagePreview" class="image-preview-container">
+            <h4>Prévia da imagem</h4>
+            <img [src]="imagePreview" alt="Imagem do item" class="image-preview" />
+        </div>
 
         <div class="buttons">
             <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid || isLoading">

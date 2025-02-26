@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
     selector: 'app-edit',
     templateUrl: './edit.component.html',
+    styleUrl: './edit.component.css',
     imports: [
         CommonModule,
         ReactiveFormsModule,
@@ -24,6 +25,7 @@ export class EditComponent implements OnInit {
     editForm: FormGroup;
     isLoading = false;
     itemId!: string;
+    imagePreview: string | null = null;
 
     constructor(
         private apiService: ApiService,
@@ -52,6 +54,7 @@ export class EditComponent implements OnInit {
                     description: item.description,
                     image: item.image,
                 });
+                this.imagePreview = item.image
             },
             error: (err) => {
                 console.error("Erro ao carregar item", err);
@@ -79,5 +82,10 @@ export class EditComponent implements OnInit {
 
     cancel(): void {
         this.router.navigate(['/']);
+    }
+
+    onImageUrlChange(): void {
+        const imageUrl = this.editForm.get('image')?.value;
+        this.imagePreview = imageUrl ? imageUrl : null;
     }
 }
