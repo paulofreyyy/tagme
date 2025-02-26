@@ -2,13 +2,25 @@
     <!-- Cabeçalho moderno -->
     <div class="header">
         <h2>Lista de Itens</h2>
-        <button mat-raised-button color="accent" [routerLink]="['/create']">
-            <mat-icon>add</mat-icon> Novo Item
-        </button>
+        <div class="header-content">
+            <!-- Filtro de pesquisa -->
+            <div class="filter-container">
+                <mat-form-field appearance="fill" style="margin-bottom: -1.25em">
+                    <mat-label>Pesquisar</mat-label>
+                    <input matInput [(ngModel)]="filterValue" (ngModelChange)="applyFilter()">
+                    <mat-icon matPrefix>search</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <button mat-raised-button color="accent" [routerLink]="['/create']">
+                <mat-icon>add</mat-icon> Novo Item
+            </button>
+            </div>
     </div>
 
-    <mat-grid-list [cols]="cols" gutterSize="16px" *ngIf="items.length > 0; else emptyState">
-        <mat-grid-tile *ngFor="let item of items" class="grid-tile">
+    <!-- Lista de itens -->
+    <mat-grid-list [cols]="cols" gutterSize="16px" *ngIf="filteredItems.length > 0; else emptyState">
+        <mat-grid-tile *ngFor="let item of getPagedItems()" class="grid-tile">
             <mat-card class="item-card">
                 <div class="image-container">
                     <img mat-card-image [src]="item.image" alt="Imagem do item" />
@@ -28,6 +40,11 @@
             </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
+    <!-- Paginação -->
+    <mat-paginator [length]="filteredItems.length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+        (page)="onPageChanged($event)">
+    </mat-paginator>
+
     <!-- Estado vazio caso não haja itens -->
     <ng-template #emptyState>
         <div class="empty-state">

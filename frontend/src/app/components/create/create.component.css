@@ -24,24 +24,22 @@ form {
 }
 
 /* MAT-FORM-FIELD */
-::ng-deep .mat-form-field-wrapper {
-    margin-bottom: 20px;
+mat-label {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-::ng-deep .mat-form-field-flex {
-    background-color: #f9f9f9;
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent;
 }
 
-::ng-deep .mat-form-field-outline {
-    color: #dddddd;
+::ng-deep .mdc-text-field--filled.mdc-text-field--focused {
+    background-color: transparent;
 }
 
-::ng-deep .mat-form-field-outline-thick {
-    color: #4a90e2;
-}
-
-::ng-deep .mat-form-field-label {
-    color: #666666;
+::ng-deep .mdc-text-field--filled:hover {
+    background-color: transparent !important;
 }
 
 /* INPUT */

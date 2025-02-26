@@ -2,7 +2,7 @@
     <h2>Criar Novo Item</h2>
 
     <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field appearance="fill" class="full-width">
             <mat-label>Título</mat-label>
             <input matInput formControlName="title" required>
             <mat-error *ngIf="createForm.get('title')?.invalid && createForm.get('title')?.touched">
@@ -10,7 +10,7 @@
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field appearance="fill" class="full-width">
             <mat-label>Descrição</mat-label>
             <textarea matInput formControlName="description" required></textarea>
             <mat-error *ngIf="createForm.get('description')?.invalid && createForm.get('description')?.touched">
@@ -18,7 +18,7 @@
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field appearance="fill" class="full-width">
             <mat-label>Imagem (URL)</mat-label>
             <input matInput formControlName="image" required (input)="onImageUrlChange()">
             <mat-error *ngIf="createForm.get('image')?.invalid && createForm.get('image')?.touched">
