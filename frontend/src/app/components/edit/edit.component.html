@@ -12,7 +12,7 @@
 
         <mat-form-field appearance="fill" class="full-width">
             <mat-label>Descrição</mat-label>
-            <textarea matInput formControlName="description" required></textarea>
+            <textarea matInput formControlName="description" required rows="5"></textarea>
             <mat-error *ngIf="editForm.get('description')?.invalid && editForm.get('description')?.touched">
                 {{ getErrorMessage('description') }}
             </mat-error>

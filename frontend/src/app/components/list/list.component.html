@@ -20,7 +20,7 @@
 
     <!-- Lista de itens -->
     <mat-grid-list [cols]="cols" gutterSize="16px" *ngIf="filteredItems.length > 0; else emptyState">
-        <mat-grid-tile *ngFor="let item of getPagedItems()" class="grid-tile">
+        <mat-grid-tile *ngFor="let item of getPagedItems()" class="grid-tile" colspan="1">
             <mat-card class="item-card">
                 <div class="image-container">
                     <img mat-card-image [src]="item.image" alt="Imagem do item" />
