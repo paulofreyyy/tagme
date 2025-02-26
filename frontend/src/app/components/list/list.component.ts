@@ -37,7 +37,7 @@ export class ListComponent implements OnInit {
 
     deleteItem(id: string): void {
         const dialogRef = this.dialog.open(DialogConfirmComponent, {
-            width: '300px',
+            width: '500px',
             data: { id }
         });
 

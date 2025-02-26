@@ -4,23 +4,17 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/materia
 
 @Component({
     selector: 'app-dialog-confirm',
-    standalone: true,
-    imports: [MatDialogModule, MatButtonModule],
-    template: `
-    <h2 mat-dialog-title>Confirmar Exclusão</h2>
-    <mat-dialog-content>
-      <p>Tem certeza que deseja excluir este item?</p>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button mat-button (click)="onNoClick()">Cancelar</button>
-      <button mat-button color="warn" (click)="onConfirm()">Excluir</button>
-    </mat-dialog-actions>
-  `
+    templateUrl: './confirm-dialog.component.html',
+    styleUrl: './confirm-dialog.component.css',
+    imports: [
+        MatDialogModule,
+        MatButtonModule
+    ]
 })
 export class DialogConfirmComponent {
     constructor(
         public dialogRef: MatDialogRef<DialogConfirmComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: any
+        @Inject(MAT_DIALOG_DATA) public data: any 
     ) { }
 
     onNoClick(): void {

@@ -24,12 +24,12 @@
         </div>
 
         <div class="buttons">
+            <button mat-raised-button color="warn" type="button" (click)="cancel()" [disabled]="isLoading">
+                Cancelar
+            </button>
             <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid || isLoading">
                 <span *ngIf="!isLoading">Salvar</span>
                 <span *ngIf="isLoading">Salvando...</span>
-            </button>
-            <button mat-raised-button color="warn" type="button" (click)="cancel()" [disabled]="isLoading">
-                Cancelar
             </button>
         </div>
     </form>
