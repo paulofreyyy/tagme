@@ -7,18 +7,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmComponent } from '../confirm-dialog/confirm-dialog.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.css'],
     imports: [
-        CommonModule, 
-        RouterModule, 
-        MatCardModule, 
+        CommonModule,
+        RouterModule,
+        MatCardModule,
         MatButtonModule,
         MatGridListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule,
     ]
 })
 export class ListComponent implements OnInit {
