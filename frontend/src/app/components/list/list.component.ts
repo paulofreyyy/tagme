@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class ListComponent implements OnInit {
     items: any[] = [];
+    cols = 4;
 
     constructor(private apiService: ApiService, public dialog: MatDialog) { }
 
@@ -48,5 +49,23 @@ export class ListComponent implements OnInit {
                 });
             }
         });
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.updateGridCols();
+    }
+
+    updateGridCols() {
+        const width = window.innerWidth;
+        if (width < 600) {
+            this.cols = 1;
+        } else if (width < 960) {
+            this.cols = 2;
+        } else if (width < 1280) {
+            this.cols = 3;
+        } else {
+            this.cols = 4;
+        }
     }
 }

@@ -7,7 +7,7 @@
         </button>
     </div>
 
-    <mat-grid-list cols="4" gutterSize="16px" *ngIf="items.length > 0; else emptyState">
+    <mat-grid-list [cols]="cols" gutterSize="16px" *ngIf="items.length > 0; else emptyState">
         <mat-grid-tile *ngFor="let item of items" class="grid-tile">
             <mat-card class="item-card">
                 <div class="image-container">
