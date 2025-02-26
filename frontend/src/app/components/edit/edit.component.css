@@ -79,6 +79,7 @@ button[mat-raised-button]:disabled {
     color: #666666;
 }
 
+/* IMAGE PREVIEW */
 .image-preview-container {
     text-align: center;
 }

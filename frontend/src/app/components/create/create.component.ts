@@ -11,6 +11,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @Component({
     selector: 'app-create',
     templateUrl: './create.component.html',
+    styleUrl: './create.component.css',
     imports: [
         CommonModule,
         ReactiveFormsModule,
@@ -23,6 +24,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class CreateComponent {
     createForm: FormGroup;
     isLoading = false;
+    imagePreview: string | null = null;
 
     constructor(
         private apiService: ApiService,
@@ -54,6 +56,12 @@ export class CreateComponent {
             })
         }
     }
+
+    onImageUrlChange(): void {
+        const imageUrl = this.createForm.get('image')?.value;
+        this.imagePreview = imageUrl ? imageUrl : null;
+    }
+
     cancel() {
         this.router.navigateByUrl('/')
     }
