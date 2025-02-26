@@ -8,6 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmComponent } from '../confirm-dialog/confirm-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @Component({
@@ -22,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
         MatGridListModule,
         MatDialogModule,
         MatIconModule,
+        MatTooltipModule
     ]
 })
 export class ListComponent implements OnInit {

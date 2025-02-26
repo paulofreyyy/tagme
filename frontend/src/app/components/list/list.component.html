@@ -18,10 +18,10 @@
                     <p class="item-description">{{ item.description }}</p>
                 </mat-card-content>
                 <mat-card-actions align="end">
-                    <button mat-icon-button color="primary" [routerLink]="['/edit', item._id]">
+                    <button mat-icon-button color="primary" [routerLink]="['/edit', item._id]" matTooltip="Editar">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn" (click)="deleteItem(item._id)">
+                    <button mat-icon-button color="warn" (click)="deleteItem(item._id)" matTooltip="Remover">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </mat-card-actions>
