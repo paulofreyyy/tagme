@@ -5,16 +5,25 @@
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Título</mat-label>
             <input matInput formControlName="title" required>
+            <mat-error *ngIf="editForm.get('title')?.invalid && editForm.get('title')?.touched">
+                {{ getErrorMessage('title') }}
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Descrição</mat-label>
             <textarea matInput formControlName="description" required></textarea>
+            <mat-error *ngIf="editForm.get('description')?.invalid && editForm.get('description')?.touched">
+                {{ getErrorMessage('description') }}
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Imagem (URL)</mat-label>
             <input matInput formControlName="image" required (input)="onImageUrlChange()">
+            <mat-error *ngIf="editForm.get('image')?.invalid && editForm.get('image')?.touched">
+                {{ getErrorMessage('image') }}
+            </mat-error>
         </mat-form-field>
 
         <!-- Pré-visualização da Imagem -->

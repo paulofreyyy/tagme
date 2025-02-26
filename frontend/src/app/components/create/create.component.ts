@@ -65,4 +65,16 @@ export class CreateComponent {
     cancel() {
         this.router.navigateByUrl('/')
     }
+
+    getErrorMessage(field: string): string {
+        const control = this.createForm.get(field);
+
+        if (control?.hasError('required')) {
+            return 'Este campo é obrigatório.';
+        }
+        if (control?.hasError('pattern')) {
+            return 'A URL deve ser válida.';
+        }
+        return '';
+    }
 }

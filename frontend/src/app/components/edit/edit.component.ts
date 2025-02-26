@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -88,4 +88,17 @@ export class EditComponent implements OnInit {
         const imageUrl = this.editForm.get('image')?.value;
         this.imagePreview = imageUrl ? imageUrl : null;
     }
+
+    getErrorMessage(field: string): string {
+        const control = this.editForm.get(field);
+
+        if (control?.hasError('required')) {
+            return 'Este campo é obrigatório.';
+        }
+        if (control?.hasError('pattern')) {
+            return 'A URL deve ser válida.';
+        }
+        return '';
+    }
+
 }
