@@ -14,6 +14,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
     selector: 'app-list',
@@ -32,7 +37,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
         MatSortModule,
         MatInputModule,
         FormsModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatSidenavModule,
+        MatDividerModule,
+        MatToolbarModule,
+        MatListModule,
+        MatCheckboxModule
     ]
 })
 export class ListComponent implements OnInit {
