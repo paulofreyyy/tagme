@@ -9,7 +9,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmComponent } from '../confirm-dialog/confirm-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
-    styleUrls: ['./list.component.css'],
+    styleUrl: "./list.component.css",
     imports: [
         CommonModule,
         RouterModule,
@@ -92,9 +92,9 @@ export class ListComponent implements OnInit {
                         this.items = data
                         this.applyFilter();
                     })
+                    this.snackBar.open('Item removido com sucesso!', 'Fechar', { duration: 3000 });
                 });
             }
-            this.snackBar.open('Item removido com sucesso!', 'Fechar', { duration: 3000 });
         });
     }
 
