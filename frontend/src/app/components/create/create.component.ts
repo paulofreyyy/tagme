@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { LayoutComponent } from "../layout/layout.component";
 
 @Component({
     selector: 'app-create',
@@ -18,7 +19,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
         MatInputModule,
         MatButtonModule,
         MatFormFieldModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        LayoutComponent
     ]
 })
 export class CreateComponent {

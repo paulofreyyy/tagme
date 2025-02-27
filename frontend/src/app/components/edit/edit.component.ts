@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { LayoutComponent } from "../layout/layout.component";
 
 @Component({
     selector: 'app-edit',
@@ -18,7 +19,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatInputModule,
         MatButtonModule,
         MatFormFieldModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        LayoutComponent
     ]
 })
 export class EditComponent implements OnInit {

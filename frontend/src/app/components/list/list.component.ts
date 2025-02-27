@@ -19,6 +19,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LayoutComponent } from '../layout/layout.component';
 
 @Component({
     selector: 'app-list',
@@ -42,7 +43,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         MatDividerModule,
         MatToolbarModule,
         MatListModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        LayoutComponent
     ]
 })
 export class ListComponent implements OnInit {
