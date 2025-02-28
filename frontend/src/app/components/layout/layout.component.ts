@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-layout',
@@ -19,4 +19,18 @@ import { RouterModule } from '@angular/router';
         RouterModule
     ]
 })
-export class LayoutComponent { }
+export class LayoutComponent {
+    currentRoute: string = "";
+
+    constructor(private route: Router) {
+        this.route.events.subscribe(event => {
+            if (event instanceof NavigationEnd) {
+                this.currentRoute = event.url
+            }
+        })
+    }
+
+    isActive(route: string) {
+        return this.currentRoute === route
+    }
+}
