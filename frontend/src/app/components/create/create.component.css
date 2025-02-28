@@ -1,21 +1,19 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
 h2 {
-    font-size: 28px;
+    /* font-size: 28px; */
     color: #333333;
     margin-bottom: 30px;
-    text-align: center;
+    font-weight: 500;
 }
 
 form {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 30px 80px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.formRow {
+    display: flex;
+    gap: 20px;
 }
 
 .full-width {
@@ -99,7 +97,7 @@ button[mat-raised-button]:disabled {
 .image-preview {
     width: 400px;
     height: 300px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 8px;
     border: 1px dashed #a1a1a1;
 }
@@ -109,6 +107,10 @@ button[mat-raised-button]:disabled {
     .container {
         padding: 20px 10px;
     }
+                                .formRow {
+                                    flex-direction: column;
+                                    gap: 0px;
+                                }
 
     form {
         padding: 20px;
