@@ -50,25 +50,6 @@ export class ItemsService {
         }
     }
 
-    async partialUpdate(id: string, body: UpdateItemDto): Promise<Item> {
-        const item = await this.itemModel.findById(id).exec();
-        if (!item) {
-            throw new NotFoundException(`Item with id ${id} not found`);
-        }
-
-        Object.keys(body).forEach((key) => {
-            if (body[key] !== undefined) {
-                item[key] = body[key];
-            }
-        });
-
-        try {
-            return await item.save();
-        } catch (error) {
-            throw new InternalServerErrorException('Error partially updating item');
-        }
-    }
-
     async remove(id: string): Promise<void> {
         try {
             const result = await this.itemModel.findByIdAndDelete(id).exec();

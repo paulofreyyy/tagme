@@ -33,12 +33,6 @@ export class ItemsController {
         return this.itemsService.update(id, body);
     }
 
-    @Patch(':id')
-    @HttpCode(HttpStatus.OK)
-    async partialUpdate(@Param('id') id: string, @Body() body: UpdateItemDto): Promise<Item> {
-        return this.itemsService.partialUpdate(id, body);
-    }
-
     @Delete(':id')
     @HttpCode(HttpStatus.OK)
     async remove(@Param('id') id: string): Promise<void> {
