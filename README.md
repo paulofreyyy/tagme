@@ -106,8 +106,8 @@ A aplicação usa **MongoDB** com os seguintes campos para os itens:
 ### Frontend
 
 - **Angular** foi escolhido por ser uma framework robusta e estruturada, ideal para a construção de aplicações de grande escala.
-- A comunicação entre frontend e backend é realizada via requisições HTTP, utilizando **Axios** ou **HttpClient** do Angular.
+- A comunicação entre frontend e backend é realizada via requisições HTTP, utilizando **HttpClient** do Angular.
 
 
 - **Angular** foi escolhido por ser uma framework robusta e estruturada, ideal para a construção de aplicações de grande escala.
-- A comunicação entre frontend e backend é realizada via requisições HTTP, utilizando **Axios** ou **HttpClient** do Angular.
+- A comunicação entre frontend e backend é realizada via requisições HTTP, utilizando **HttpClient** do Angular.
